@@ -1,0 +1,34 @@
+<ion-menu [content]="content">
+  <ion-header no-shadow no-border>
+    <ion-navbar class="navMenu" hideBackButton transparent>
+    <ion-buttons end (click)="logout()">
+      <button ion-button icon-only>
+        <ion-icon style="color: white !important;" name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  </ion-header>
+ 
+  <ion-content class="menucontent" style="background-image: linear-gradient(to bottom, #572174, #7625cb);">
+    <ion-row style="text-align: center;">
+      <ion-col *ngIf="!fbid">
+        <img style="max-width:20% !important;" src="../../assets/imgs/1us-blanco.svg" (click)="presentPopover($event)">
+      </ion-col>
+      <ion-col *ngIf="fbid">
+        <img style="max-width:40% !important;" [src]="imgSrc" (click)="presentPopover($event)">
+      </ion-col>
+    </ion-row>
+    <ion-list no-lines inset>
+      <ion-list-header>
+        <strong>Menú</strong>
+      </ion-list-header>
+      <ion-item no-lines menuClose *ngFor="let p of pages" (click)="openPage(p.page)">
+        <ion-icon style="color: white !important; font-size: 0.4em !important;" name="{{p.iconName}}" item-start></ion-icon>
+        <p style="font-size:0.7em; color: white;"><strong>{{ p.title }}</strong></p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+ 
+</ion-menu>
+ 
+<ion-nav #content main [root]="rootPage" persistent=“true” swipeBackEnabled="false"></ion-nav>

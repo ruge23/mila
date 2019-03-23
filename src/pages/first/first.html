@@ -1,0 +1,49 @@
+<ion-content padding>
+  <ion-row style="margin-top: 10%">
+    <ion-col>
+      <img class="firstImg" src="../../assets/imgs/login/iso.png">
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row style="height: 20px;"></ion-row> -->
+  <ion-row style="margin-top: 10%">
+    <ion-col>
+      <img class="secondImg" src="../../assets/imgs/login/id-face.png" (click)="login()">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h3 style="margin-top: 10%; color: darkmagenta;">FACE ID</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p style="font-size: 0.9em; color: grey;"><strong>Elegí tu ID ideal para iniciar</strong></p>
+    </ion-col>
+  </ion-row>
+<!--   <ion-row>
+    <ion-col>
+      <button style="background-color:white !important; color:red;" ion-button icon-start>
+        <ion-icon name="mila-google"></ion-icon>
+        Google
+      </button>
+    </ion-col>
+  </ion-row> -->
+  <ion-row style="margin-top: 10%">
+    <ion-col (click)="loginAction()">
+      <button class="face" style="background-color:white !important; color:darkblue;" ion-button>
+        <ion-icon name="mila-facebook"></ion-icon>        
+        Facebook
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col (click)="goTointerLogin()">
+      <button class="sesion" style="background-color:white !important; color: #777; font-size: 0.9em;" ion-button>        
+        Iniciar con mi usuario
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+

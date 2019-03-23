@@ -1,0 +1,62 @@
+page-cambio-pass {
+    div.fixed-content{
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    ion-content.content{
+        background-image: linear-gradient(to bottom, #b32e43, #912ad3);
+        background-size: cover;
+        /* margin-top: 0px !important;
+        margin-bottom: 0px !important; */
+    }
+    ion-navbar.toolbar{
+        background-color: transparent !important;   
+    }
+    .m-logo{
+        max-width: 50vw;
+    }
+    .logo-cont{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15vh;
+        margin-top: 5vh;
+    }
+    .login-form{
+        border-radius: 10px;
+    }
+    .login-form .card-content {
+        padding: 0;
+        color: #a6a6a8;
+    }
+    ion-label{
+        margin-left: 5px;
+    }
+    ion-label img{
+        float: left;width: 20px;margin-right:10px;
+    }
+    ion-label, ion-input{
+        color: #a6a6a8!important;
+    }
+    .login-form button{
+        height: 45px;
+        margin: 0;
+        background-color: #59007a;
+        text-transform: uppercase;
+    }
+    .login-form ion-label[fixed] {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 127px;
+        -ms-flex: 0 0 127px;
+        flex: 0 0 127px;
+    }
+    ion-item{
+        height: 3.5em;
+    }
+    .item-inner{
+        border: none!important;
+        box-shadow: none;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+}

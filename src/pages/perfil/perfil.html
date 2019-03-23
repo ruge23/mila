@@ -1,0 +1,73 @@
+<ion-header no-shadow no-border>
+    <ion-navbar no-border transparent>
+      <ion-title>Actualizar perfil</ion-title>
+      <ion-buttons end (click)="goToHome()">
+        <button ion-button icon-only>
+          <ion-icon style="font-size: 1em !important; color: white !important;" name="mila-tilde"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content no-padding>
+  <!-- <div id="profile-bg"></div> -->
+  <div id="profile-info">
+      <img style="max-width: 20% !important;" src="../../assets/imgs/perfil/cam.png" alt="">
+    </div>
+      <div id="content">
+        
+        <ion-list class="listPerfil" inset>
+
+          <ion-item>
+            <ion-label floating><img src="../../assets/imgs/perfil/user.png" alt="">{{nameUser}}</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating><img src="../../assets/imgs/perfil/mail.png" alt=""> Email</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating><img src="../../assets/imgs/perfil/tel.png" alt=""> Tel Fijo</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating><img src="../../assets/imgs/perfil/mobile.png" alt=""> Tel Celular</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating><img src="../../assets/imgs/perfil/home.png" alt=""> Domicilio</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating>Nro.</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-label floating>Provincia</ion-label>
+                      <ion-input type="text"></ion-input>
+                    </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-label floating>Localidad</ion-label>
+                      <ion-input type="text"></ion-input>
+                    </ion-item>
+              </ion-col>
+            </ion-row>
+        </ion-list>
+        <div padding>
+          <button class="guardar" ion-button block (click)="goToHome()">Guardar cambios</button>
+        </div>
+      </div>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header no-border no-shadow transparent>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>    
+<ion-content overflow-scroll="true">
+    <ion-grid>
+        <ion-row>
+          <ion-col col-12 class="logo-cont">
+              <img src="../../assets/imgs/login/logo-completo.svg" alt="" class="m-logo">
+          </ion-col>
+        </ion-row>
+        <ion-row>  
+          <ion-card class="login-form">
+            <ion-card-content>
+              <ion-list>
+                <ion-item>      
+                  <ion-label><img src="../../assets/imgs/login/pass.png" alt=""></ion-label>
+                  <ion-input type="password" [(ngModel)]="user.pw1" placeholder="Nueva contraseña"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <img src="../../assets/imgs/login/pass.png" alt="">
+                  <ion-label text-wrap><img src="../../assets/imgs/login/pass.png" alt=""></ion-label>
+                  <ion-input type="password" [(ngModel)]="user.pw2" placeholder="Repetir contraseña"></ion-input>
+                </ion-item>
+                <button ion-button full (click)="enviarPass()"><strong>Enviar</strong></button>
+              </ion-list>
+            </ion-card-content>     
+          </ion-card>
+        </ion-row>
+    </ion-grid>
+</ion-content>  

@@ -1,0 +1,63 @@
+<ion-header no-shadow no-border>
+  <ion-navbar transparent>
+    <ion-row>
+      <ion-title float-right><ion-icon style="margin-right:0px !important;color: white !important;" name="mila-logo"></ion-icon></ion-title>
+      <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+        <button ion-button icon-only>
+          <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+        <ion-avatar item-start>
+          <img [src]="imgSrc">
+        </ion-avatar>
+      </ion-buttons>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row >
+    <ion-col>
+        <h5 text-center style="color: white;"><strong>Formas de pago</strong></h5>
+            <ion-card class="redbg">
+                <ion-card-content>
+                  <p>
+                    Los intereses pueden variar.<br>
+                    Corrobore al momento de abonar.
+                  </p>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card class="redbrd">
+                <ion-card-content>
+                  <ion-row style="margin-bottom: 5px;">
+                    <img class="pago" src="../../assets/imgs/pago-facil.png">
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <p text-center>Busca tu sucursal más cercana con N° de DNI o código de barras.</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="height: 30px;"></ion-row>
+                  <ion-row>
+                    <img class="pago2" src="../../assets/imgs/rapipago.png" alt="">
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <p text-center>Busca tu sucursal más cercana Código de empresa 3064 o código de barras.</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row style="height: 30px;">
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <p text-center>Tenga en cuenta que los pagos realizados pueden demorar 72 hs hábiles, posteriores a su acreditación, en verse reflejados en sistema</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>      
+    </ion-col>
+  </ion-row>
+ 
+</ion-content>

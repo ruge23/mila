@@ -1,0 +1,17 @@
+<ion-header no-shadow no-border>
+  <ion-navbar color="menu">
+    <ion-title style="font-size: 1em;">Términos y Condiciones</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-row>
+    <ion-col text-center class="faqs-header">
+    </ion-col>
+  </ion-row>
+  <div padding *ngFor="let t of terminos">
+    <div class="chart-body" [innerHTML]="t.valor"></div>
+  </div>
+</ion-content>

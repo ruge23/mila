@@ -1,0 +1,126 @@
+<ion-header no-shadow no-border>
+  <ion-navbar transparent>
+    <ion-row>
+      <ion-title float-right><ion-icon style="margin-right:0px !important;color: white !important;" name="mila-logo"></ion-icon></ion-title>
+      <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+        <button ion-button icon-only>
+          <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+        <ion-avatar item-start>
+          <img [src]="imgSrc">
+        </ion-avatar>
+      </ion-buttons>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row padding>
+    <ion-col>
+        <p text-center no-margin style="color: #fff;">Estimado (a):</p>
+        <h2 text-center  no-margin  style="color: #fff;">{{nameUser}}</h2>
+    </ion-col>
+  </ion-row>
+  <ion-card class="redbrd">
+      <ion-card-content>
+          <ion-list>
+
+              <ion-item>
+                <ion-row>
+                    <ion-col col-7>
+                        <p>N° de cuota:</p>
+                    </ion-col>
+                    <ion-col class="derecha" col-5>
+                        <span>{{detalleCuota.Numero}}</span>
+                    </ion-col>
+                </ion-row>
+              </ion-item>
+
+
+              <ion-item>
+                  <ion-row>
+                      <ion-col col-7>
+                          <p>Vencimiento</p>
+                      </ion-col>
+                      <ion-col class="derecha" col-5>
+                          <span>{{detalleCuota.Vencimiento | date:'dd/MM/yyyy'}}</span>
+                      </ion-col>
+                  </ion-row>
+                </ion-item>
+
+                <ion-item>
+                    <ion-row>
+                        <ion-col col-7>
+                            <p>Fecha de pago:</p>
+                          </ion-col>
+                        <ion-col class="derecha" col-5>
+                            <span>{{detalleCuota.Vencimiento | date:'dd/MM/yyyy'}}</span>
+                          </ion-col>
+                    </ion-row>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-row>
+                          <ion-col col-7>
+                              <p>Importe a pagar:</p>
+                            </ion-col>
+                          <ion-col class="derecha" col-5>
+                              <span>{{detalleCuota.Saldo}}</span>
+                            </ion-col>
+                      </ion-row>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-row>
+                            <ion-col col-7>
+                                <p>Medio de pago:</p>
+                              </ion-col>
+                            <ion-col class="derecha" col-5>
+                                <span>Rapipago</span>
+                              </ion-col>
+                        </ion-row>
+                      </ion-item>
+                        </ion-list>
+                      </ion-card-content>
+                    </ion-card>
+  <!-- <ion-list>
+    <ion-list-header>
+      Conceptos
+    </ion-list-header>
+    <ion-item *ngFor="let concept of detalleCuota['Conceptos']">
+      <ion-icon name="rose" item-start></ion-icon>
+      {{concept.Nombre}}
+      <ion-note item-end>
+        {{concept.Importe}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Detalle
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="leaf" item-start></ion-icon>
+        Cuota N°
+      <ion-note item-end>
+        {{detalleCuota.Numero}}
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="leaf" item-start></ion-icon>
+        Importe
+      <ion-note item-end>
+        {{detalleCuota.Importe}}
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="leaf" item-start></ion-icon>
+        Vencimiento
+      <ion-note item-end>
+        {{detalleCuota.Vencimiento}}
+      </ion-note>
+    </ion-item>
+  </ion-list> -->
+</ion-content>

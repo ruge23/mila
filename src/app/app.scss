@@ -1,0 +1,125 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face{
+    font-family: Montserrat;
+    src: url('../assets/fonts/montserrat/montserrat.woff2');
+}
+
+*{
+    font-family: Montserrat;
+}
+ion-navbar.toolbar{
+    padding-top: 8% !important;
+}
+
+.platform-ios.has-translucent-status-bar .app-header-bar{
+    padding-top: 20px;
+}
+.platform-android.has-translucent-status-bar .app-header-bar{
+    padding-top: 25px;
+}
+
+.back-button-icon-md,
+.back-button-icon-ios {
+  color: white !important; 
+}
+.back-button-icon-ios{
+    font-size: 1.4em !important;
+    color: white !important;   
+}
+
+
+ion-icon {
+    &[class*="mila-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        margin-right: 20px;
+        width: 1.5em;
+        height: 1.5em;
+    }
+    // custom icons
+    &[class*="mila-google"] {
+        mask-image: url('../assets/imgs/login/g.png');
+    }
+    &[class*="mila-facebook"] {
+        mask-image: url('../assets/imgs/login/f.png');
+    }
+    &[class*="mila-linkedin"] {
+        mask-image: url('../assets/imgs/login/in.png');
+    }
+    &[class*="mila-lapiz"] {
+        mask-image: url('../assets/imgs/inicio/lapiz.png');
+    }
+    &[class*="mila-tilde"] {
+        mask-image: url('../assets/imgs/perfil/tilde.png');
+    }
+    &[class*="mila-home"] {
+        mask-image: url('../assets/imgs/perfil/home.png');
+    }
+    &[class*="mila-user"] {
+        mask-image: url('../assets/imgs/perfil/user.png');
+    }
+    &[class*="mila-logo"] {
+        mask-image: url('../assets/imgs/menu/m-blanca.png');
+    }
+    &[class*="mila-detalle"] {
+        mask-image: url('../assets/imgs/detalle.svg');
+    }
+    &[class*="mila-informe"] {
+        mask-image: url('../assets/imgs/informe.svg');
+    }
+    &[class*="mila-est"] {
+        mask-image: url('../assets/imgs/2est.svg');
+    }
+    &[class*="mila-avatar"] {
+        mask-image: url('../assets/imgs/1us-blanco.svg');
+    }
+    //icon-menu-blancos
+    &[class*="mila-2est"] {
+        mask-image: url('../assets/imgs/icon-menu/2est-blanco.svg');
+    }
+    &[class*="mila-3sol"] {
+        mask-image: url('../assets/imgs/icon-menu/3sol-blanco.svg');
+    }
+    &[class*="mila-4pren"] {
+        mask-image: url('../assets/imgs/icon-menu/4pren-blanco.svg');
+    }
+    &[class*="mila-5seg"] {
+        mask-image: url('../assets/imgs/icon-menu/5seg-blanco.svg');
+    }
+    &[class*="mila-6phone"] {
+        mask-image: url('../assets/imgs/icon-menu/6phone-blanco.svg');
+    }
+    &[class*="mila-7news"] {
+        mask-image: url('../assets/imgs/icon-menu/7news-blanco.svg');
+    }
+    &[class*="mila-8preg"] {
+        mask-image: url('../assets/imgs/icon-menu/8preguntas-blanco.svg');
+    }
+    &[class*="mila-detalles"] {
+        mask-image: url('../assets/imgs/detalles.png');
+    }
+    &[class*="mila-aler"] {
+        mask-image: url('../assets/imgs/alert.svg');
+    }
+    &[class*="mila-esta2"] {
+        mask-image: url('../assets/imgs/botonestadodecuenta.svg');
+    }
+}

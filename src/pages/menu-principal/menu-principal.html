@@ -1,0 +1,88 @@
+<ion-header no-shadow no-border>
+  <ion-navbar hideBackButton color="menu">
+      <button ion-button menuToggle>
+        <ion-icon style="color:white !important" name="menu"></ion-icon>
+      </button>
+      <ion-title style="text-align: center;"><ion-icon style="color: white !important;" name="mila-logo"></ion-icon></ion-title>
+      <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+        <button ion-button icon-only>
+          <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+        <ion-avatar item-start>
+          <img [src]="imgSrc">
+        </ion-avatar>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p style="font-size: 0.7em; margin: 25px; text-align: center;"><strong>MENÚ PRINCIPAL</strong></p>
+  <ion-list>
+    <!-- <button ion-item detail-none block menuClose *ngFor="let p of pages" (click)="openPage(p.page)">
+      <ion-icon item-start [name]="p.icon"></ion-icon>
+      {{ p.title }}
+    </button> -->
+    <ion-card *ngIf="mostrarPrendaSolicitada" style="border-radius: 5px; margin-bottom: 20px !important;box-shadow: 0px 0px 30px -4px rgba(128,128,128,1) !important; border: 4px solid #6f2bac !important;" menuClose (click)="openSolicitudPedida()">
+      <ion-row>
+        <ion-col>
+          <img style="margin: 15px; width: 50% !important" src="../../assets/imgs/menu/4pren.svg">
+        </ion-col>
+        <ion-col col-7>
+          <div style="margin: 20px 0 20px 20px;">
+            <p style="font-size: 0.9em !important; color: #6f2bac !important;"><strong>Prenda Solicitada</strong></p>
+            <p style="font-size: 0.7em !important; padding-top: 5px; color: #cd1616 !important;"><strong>Fecha de retiro: <span style="color: #cd1616;">{{ fechaRetiroPrenda | date :  "dd/MM/y" }}</span></strong></p>          
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card *ngIf="mostrarPrecancelacion" style="border-radius: 5px; margin-bottom: 20px !important;box-shadow: 0px 0px 30px -4px rgba(128,128,128,1) !important; border: 4px solid #6f2bac !important;" menuClose (click)="openSolicitudCancelacion()">
+        <ion-row>
+          <ion-col>
+            <img style="margin: 15px; width: 50% !important" src="../../assets/imgs/menu/3sol.svg">
+          </ion-col>
+          <ion-col col-7>
+            <div style="margin: 20px;">
+              <p style="font-size: 0.9em !important; color: #6f2bac !important;"><strong>Precancelación Solicitada</strong></p>
+              <p style="font-size: 0.7em !important; padding-top: 5px; color: #777 !important;"><strong>Importe: {{ importePrecancelacion | currency:'$':true:"1.2" }}</strong></p>          
+              <p style="font-size: 0.7em !important; padding-top: 5px; color: #777 !important;"><strong>Vigencia desde: <span style="color: #cd1616;">{{ vigenciaDesde | date :  "dd/MM/y" }}</span></strong></p>          
+              <p style="font-size: 0.7em !important; padding-top: 5px; color: #cd1616 !important;"><strong>Vigencia hasta: <span style="color: #cd1616;">{{ vigenciaHasta | date :  "dd/MM/y" }}</span></strong></p>                      
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    <ion-card style="border-radius: 5px; margin-bottom: 20px !important;box-shadow: 0px 0px 30px -4px rgba(128,128,128,1) !important;" menuClose *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-row>
+        <ion-col>
+          <img style="margin: 15px; width: 50% !important" src={{p.imgSrc}}>
+        </ion-col>
+        <ion-col col-7>
+          <div style="margin: 20px;">
+            <p style="font-size: 0.9em !important; color: #333 !important;"><strong>{{ p.title }}</strong></p>
+            <p style="font-size: 0.7em !important; padding-top: 5px; color: #777 !important;">{{p.sub}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer (click)="goToTerminos()"> 
+  <!-- <ion-toolbar> -->
+    <ion-row align-items-center>
+<!--         <ion-col>
+        {{ username }}
+      </ion-col> -->
+      <ion-col style="text-align: center;">
+        <p style="font-size: 0.7em; margin: 12px;">Terminos y Condiciones</p>
+        <!-- <button ion-button full clear icon-left (click)="logout()">
+          <ion-icon name="sign-out">
+          </ion-icon>
+          Salir</button> -->
+      </ion-col>
+    </ion-row>
+  <!-- </ion-toolbar> -->
+</ion-footer>
+

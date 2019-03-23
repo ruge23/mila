@@ -1,0 +1,56 @@
+<ion-header no-border no-shadow transparent>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>    
+<ion-content overflow-scroll="true">
+    <!-- <video *ngIf="!videoHide" #video1 id="video" loop preload="auto" autoplay>
+      <source src="../../assets/videos/videoLogin.mp4" type="video/mp4" />
+    </video> -->
+    <ion-grid>
+        <ion-row>
+          <ion-col col-12 class="logo-cont">
+              <img src="../../assets/imgs/login/logo-completo.svg" alt="" class="m-logo">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            
+            <ion-card class="login-form">
+
+                
+              
+                <ion-card-content>
+                    <ion-list>
+                        <ion-item>
+                          
+                          <ion-label><img src="../../assets/imgs/login/user.png" alt=""></ion-label>
+                          <ion-input placeholder="Email" type="email" [(ngModel)]="user.name" style="font-size: 0.9 !important;"></ion-input>
+                        </ion-item>
+                     
+                        <ion-item>
+                          <img src="../../assets/imgs/login/pass.png" alt="">
+                          <ion-label><img src="../../assets/imgs/login/pass.png" alt=""></ion-label>
+                          <ion-input placeholder="Contraseña" type="password" [(ngModel)]="user.pw"></ion-input>
+                        </ion-item>
+    
+                        <button ion-button full (click)="loginUser()"><strong>Ingresar</strong></button>
+                      </ion-list>
+                </ion-card-content>
+              
+                
+              
+              </ion-card>
+          </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer trasparent>
+    <ion-grid style="background: transparent !important;">
+      <ion-row style="text-align: center;">
+        <!-- <ion-col>
+          <div style="font-size: 0.8em;color: #fff;" float-left (click)="goToPerfil()">Actualizar perfil</div>
+        </ion-col> -->
+        <ion-col (click)="goToChangePw()">
+          <div style="font-size: 0.8em;color: #fff;">Olvide mi contraseña</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>

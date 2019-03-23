@@ -1,0 +1,135 @@
+<ion-header no-shadow no-border *ngIf="llegoData">
+  <ion-navbar transparent>
+    <ion-row class="row-nav">
+      <ion-title style="text-align: center;"><ion-icon style="margin-right:0px !important;color: white !important;" name="mila-logo"></ion-icon></ion-title>
+      <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+        <button ion-button icon-only>
+          <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+        <ion-avatar item-start>
+          <img [src]="imgSrc">
+        </ion-avatar>
+      </ion-buttons>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content #pageContent fullscreen>
+  <div *ngIf="llegoData">
+    <ion-row style="margin: 0 auto; width: 50% !important;">
+      <ion-col style="width: 40%; border-bottom: 3px solid white;">
+        <p style="font-size: 0.9em; color: white;"><strong>Capital Solicitado</strong></p>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <strong><span style="font-size: 0.8em; color: white; line-height: 4;">$ </span></strong><h3 style="color: white;"> {{verCapital(prestamo.CapitalSolicitado)}}</h3><strong><span style="font-size: 0.6em; color: white; line-height: 7;"> PESOS</span></strong>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-badge class="first" color="badge">
+          <ion-row style="text-align: center">
+            <ion-col>
+              <p>Saldo adeudado:</p>
+            </ion-col>
+            <ion-col>
+              <p><strong>{{saldoAdeudado() | currency:'$':true:"1.2" }}</strong></p>
+            </ion-col>
+            <ion-col *ngIf="mostrarBadge">
+              <p float-right><ion-icon style="font-size: 1.5em;" (click)="goToVencimiento()" name="add-circle" color="light"></ion-icon></p>
+            </ion-col>
+          </ion-row>
+        </ion-badge>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="mostrarBadge">
+      <ion-col>
+        <ion-badge class="first" color="badge">
+          <ion-row>
+            <ion-col>
+              <span>Próxima cuota a vencer:</span> 
+            </ion-col>
+            <ion-col>
+              <strong>{{cuotaVencer}}</strong>          
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <span>Monto próxima cuota:</span>
+            </ion-col>
+            <ion-col>
+              {{montoVencer | currency:'$':true }}
+            </ion-col>
+          </ion-row>
+        </ion-badge>
+      </ion-col>
+    </ion-row> 
+    <ion-card id="descriptions" class="description">
+        <ion-row>
+            <ion-col>
+              <p style="color: #9b34e7 !important;"><strong>N°Cuota</strong></p>
+            </ion-col>
+            <ion-col>
+              <strong>Vencimiento</strong>
+            </ion-col>
+            <ion-col color="badge">
+              <p style="color: #9b34e7 !important;"><strong>Monto</strong></p>
+            </ion-col>
+            <ion-col>
+              <strong>Detalle</strong>
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 7px;" *ngFor="let couta of prestamo.Cuotas | paginate: { itemsPerPage: 6, currentPage: p }">
+            <ion-col class="cuota">
+              <div text-center style="color: #9b34e7 !important;">{{couta.Numero}}</div>
+            </ion-col>
+            <ion-col class="detalle">
+              {{verFecha(couta.Vencimiento)}}
+            </ion-col>
+            <ion-col class="detalle">
+             <div float-right style="color: #9b34e7 !important;">{{couta.Importe | currency:'$':true }}</div>
+            </ion-col>
+            <ion-col style="padding: 0px !important;" (click)="goToCoutaDetalle(couta)">
+              <ion-icon text-center name="mila-detalle" color="badge" style="font-size:1em !important; margin-right: 0px !important;"></ion-icon>
+            </ion-col>
+          </ion-row>
+      </ion-card>
+      <button id="vermas" class="verMas" ion-button color="verMas" (click)="verMas($event)">
+        Ver más
+      </button>
+      <ion-row>
+        <ion-col>
+          <pagination-controls 
+            (pageChange)="p = $event"
+            directionLinks="false"
+            >
+          </pagination-controls>
+          <!-- <ion-badge color="light" class="pages" *ngFor="let pages of [1,2,3,4,5,6]">
+            {{pages}}
+          </ion-badge> -->
+        </ion-col>
+      </ion-row> 
+      <ion-row>
+        <ion-col>
+          <button class="descargar" ion-button icon-start outline (click)="getInforme()">
+            <ion-icon style="margin-right: 10px;" name="download"></ion-icon>
+            Descargar
+          </button>
+        </ion-col>
+      </ion-row>
+  </div>
+</ion-content>
+<ion-footer style="height: 65px;" [scrollHide]="footerScrollConfig" [scrollContent]="pageContent">
+  <ion-toolbar style="height: 65px;">
+    <ion-row>
+      <ion-col>
+        <img class="iconFooter2" src="../../assets/imgs/boton-estado-de-cuenta-inactive.svg" alt="">
+      </ion-col>
+      <ion-col (click)="goToPagos()">
+        <img class="iconFooter" src="../../assets/imgs/boton-informe-pago.svg" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+

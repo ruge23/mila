@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="menu">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Noticias y novedades</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col>
+            <ion-list inset (click)="expandItem(item)" ion-item *ngFor="let item of items">
+  
+                  <ion-item no-lines>
+                      <h3 text-wrap style="font-weight:600;">{{item.noticiaid}}.{{item.titulo}}</h3>
+                  </ion-item>
+                     
+                  <ion-item no-lines *ngIf="item.expanded">
+                      <p text-wrap>{{item.detalle}}</p>
+                  </ion-item>
+            </ion-list>
+        </ion-col>
+      </ion-row>
+</ion-content>

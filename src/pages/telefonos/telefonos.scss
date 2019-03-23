@@ -1,0 +1,38 @@
+page-telefonos {
+    .telefonos-header{
+        background-image: url(../../assets/imgs/telefonos/mila-header.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+    .tel-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        border-bottom: 1px solid #000;
+        padding-top: 10px;
+    }
+    .tel-item span{
+        display: block;
+        color: #676566;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    .tel-item a{
+        color: #59007a;
+        text-decoration: none;
+    }
+    ion-icon {
+        display: inline-block;
+        font-size: 2em;
+        color: #676566;
+    }
+    ion-item.item.item-block{
+        border-bottom: 1px solid lightgray !important;
+    }
+}

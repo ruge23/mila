@@ -1,0 +1,32 @@
+<ion-header no-shadow no-border transparent>
+  <ion-navbar class="navJuicio" no-shadow no-border transparent>
+    <ion-title text-center><ion-icon style="color: white !important;" name="mila-logo"></ion-icon></ion-title>
+    <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+      <button ion-button icon-only>
+        <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+      <ion-avatar item-start>
+        <img [src]="imgSrc">
+      </ion-avatar>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row>
+    <ion-col>
+      <p text-center no-margin style="color: #fff;">Estimado (a):</p>
+      <h2 text-center  no-margin  style="color: #fff;">{{nameUser}}</h2>
+      <ion-card class="redbg">
+        <ion-card-content>
+          <p>Ha sido asignado al estudio jurídico {{estudio['Nombre']}}, porfavor comuniquese a la brevedad</p>
+        </ion-card-content>
+      </ion-card>
+      <div padding>
+        <button class="pagar" ion-button block (click)="callNumber()">Llamar al estudio</button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,71 @@
+page-login {
+    div.fixed-content{
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    ion-content.content{
+        background: url('../../assets/imgs/fina-gif.gif');
+        background-size: cover;
+        /* margin-top: 0px !important;
+        margin-bottom: 0px !important; */
+    }
+    video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    ion-navbar.toolbar{
+        background-color: transparent !important;   
+    }
+    .m-logo{
+        max-width: 50vw;
+    }
+    .logo-cont{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15vh;
+        margin-top: 5vh;
+    }
+    .login-form{
+        border-radius: 10px;
+    }
+    .login-form .card-content {
+        padding: 0;
+        color: #a6a6a8;
+    }
+    ion-label img{
+        float: left;width: 20px;margin-right:10px;
+    }
+    ion-label, ion-input{
+        color: #a6a6a8!important;
+    }
+    .login-form button{
+        height: 45px;
+        margin: 0;
+        background-color: #59007a;
+        text-transform: uppercase;
+    }
+    ion-item{
+        height: 3.5em;
+    }
+    .item-inner{
+        border: none!important;
+        box-shadow: none;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+
+    .footer{
+        background-color: transparent !important;
+    }
+    .footer::before{
+        background-image: none !important;
+    }
+}

@@ -1,0 +1,54 @@
+<ion-header no-shadow no-border>
+    <ion-navbar transparent>
+      <ion-row class="row-nav">
+        <ion-title style="text-align: center;"><ion-icon style="margin-right:0px !important;color: white !important;" name="mila-logo"></ion-icon></ion-title>
+        <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+          <button ion-button icon-only>
+            <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+          <ion-avatar item-start>
+            <img [src]="imgSrc">
+          </ion-avatar>
+        </ion-buttons>
+      </ion-row>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content no-padding>
+  <ion-row padding>
+    <ion-col>
+      <p text-center no-margin style="color: #fff; font-size: 0.8em;"><strong>Estimado (a):</strong></p><br>
+      <h2 text-center no-margin style="color: #fff; font-size: 1em;"><strong>{{nameUser}}</strong></h2><br>
+      <p text-wrap text-center no-margin style="color: #fff; font-size: 0.8em;">A continuación podrás descargar la poliza vigente de tu auto.</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div style="background: #bfbfbf !important; height: 80px !important; width: 100%; text-align: center;">
+        <img src="{{imagenSeguro()}}" style="width: 80%; margin: 5px;">
+      </div>
+        <ngx-datatable style="width: 100% !important;"
+        [sortType]="'multi'"
+        [headerHeight]="80"
+        [rowHeight]="40"
+        [rows]="rows"
+        [columns]="columns"
+        [columnMode]="'flex'"
+        [limit]="10">
+      </ngx-datatable>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p style="color: white; font-size: 1em;" text-center><ion-icon style="margin-right: 2px !important;color: white; font-size: 1em;" name="mila-aler"></ion-icon>Tarjeta no válida para circular</p>
+    </ion-col>
+  </ion-row>
+  <div justify-content-center padding>
+      <a href="{{this.poliza['DocumentosPoliza'][0]['URL']}}" class="descargar" ion-button icon-start outline>
+          <ion-icon style="margin-right: 10px;" name="download"></ion-icon>
+          Descargar poliza
+      </a>
+  </div>
+</ion-content>

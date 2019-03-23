@@ -1,0 +1,43 @@
+<ion-header no-shadow no-border>
+  <ion-navbar transparent>
+    <ion-row class="row-nav">
+      <ion-title style="text-align: center;"><ion-icon style="margin-right:0px !important;color: white !important;" name="mila-logo"></ion-icon></ion-title>
+      <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+        <button ion-button icon-only>
+          <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+        <ion-avatar item-start>
+          <img [src]="imgSrc">
+        </ion-avatar>
+      </ion-buttons>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row padding>
+    <ion-col>
+      <p text-center no-margin style="color: #fff; font-size: 0.8em;"><strong>Estimado (a):</strong></p><br>
+      <h2 text-center no-margin style="color: #fff; font-size: 1em;"><strong>{{nameUser}}</strong></h2><br>
+      <p text-wrap text-center no-margin style="color: #fff; font-size: 0.8em;">A continuación podrás solicitar prenda.</p>
+    </ion-col>
+  </ion-row>
+  <div padding>
+    <button class="descargar" ion-button icon-start outline (click)="solicitarPrenda()" [disabled]="solicitado">Solicitar prenda</button>
+  </div>
+  <ion-row style="text-align: center;">
+    <ion-col>
+      <button ion-fab color="dark" style="margin: 0 auto; height: 42px; width: 42px;">
+        <ion-icon style="color: white !important; margin-right: 0px !important; font-size: 1em;" name="mila-detalles"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="mostrarFecha" style="text-align: center;">
+    <ion-col style="max-width: 40% !important; border-bottom: 5px solid white; margin: 0 auto;">
+      <p style="font-size: 1em; color: white;"><strong>Fecha a retirar:</strong></p>
+      <p style="font-size: 1.2em; color: white;"><strong>{{ fechaRetiro | date :  "dd/MM/y" }}</strong></p>
+    </ion-col>
+  </ion-row>
+</ion-content>

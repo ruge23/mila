@@ -1,0 +1,18 @@
+page-terminos {
+    .faqs-header{
+        background-image: url('../../assets/imgs/bg-terminos.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+    *{
+        border-bottom: none!important;
+    }
+    .toolbar-title{
+        font-size: 1.8rem !important;
+    }
+}

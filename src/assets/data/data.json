@@ -1,0 +1,24 @@
+{
+    "technologies" : [
+      {
+         "name" : "-Poliza",
+         "company" : "12121234"
+      },
+      {
+         "name" : "-Asegurado",
+         "company" : "Juan Furtado"
+      },
+      {
+         "name" : "-Vehiculo",
+         "company" : "Toyota corola 308 1.6"
+      },
+      {
+         "name" : "-Patente",
+         "company" : "GBG456"
+      },
+      {
+         "name" : "-Vigencia",
+         "company" : "27-3-2017 al 3-5-2018"
+      }
+    ]
+}

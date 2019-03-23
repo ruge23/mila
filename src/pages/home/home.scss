@@ -1,0 +1,43 @@
+page-home {
+    .scroll-content{
+        background-image: linear-gradient(to bottom, #572174, #7625cb);
+    }
+    ion-navbar .toolbar-background {
+        background: transparent;
+    }
+    
+    ion-content .scroll-content {
+        margin-top:0px !important;
+    }
+
+    div.inicio{
+        margin-top: 20% !important;
+        text-align: center; 
+        //margin: 25% auto !important;
+        img{
+            display: flex;
+            margin: 0 auto !important;
+            width: 30%;
+        }
+    }
+    h2,p,h5{
+        margin: 40px auto;
+        color: white;
+    }
+    h2{
+        margin-bottom: 5px !important;
+        width: 50%;
+    }
+    h5{
+        margin-top: 5px !important;
+        margin-bottom: 20px !important;
+    }
+    p{
+        width: 90%;
+    }
+    button.comenzar{
+        height: 50px;
+        border-radius: 10px;
+        text-transform: none !important;
+    }
+}   

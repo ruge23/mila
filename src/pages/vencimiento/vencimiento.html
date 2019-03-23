@@ -1,0 +1,68 @@
+<ion-header no-shadow no-border>
+  <ion-navbar transparent>
+    <ion-row>
+      <ion-title float-right><ion-icon style="margin-right:0px !important;color: white !important;" name="mila-logo"></ion-icon></ion-title>
+      <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+        <button ion-button icon-only>
+          <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+        <ion-avatar item-start>
+          <img [src]="imgSrc">
+        </ion-avatar>
+      </ion-buttons>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row >
+    <ion-col>
+        <p text-center no-margin style="color: #fff;">Estimado (a):</p>
+        <h2 text-center  no-margin  style="color: #fff;">{{nameUser}}</h2>
+        <p text-center  style="color: #fff;">A continuación vera el detalle del saldo adeudado</p>
+            <ion-card class="redbg">
+                <ion-card-content>
+                  <p>Tenga en cuenta que los pagos realizados pueden demorar hasta 72hs hábiles en verse reflejados</p>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card class="redbrd">
+                <ion-card-content>
+                  
+                  <ion-list>
+                        <ion-item>
+                          <ion-row>
+                              <ion-col col-7>
+                                  <p>Vencimiento</p>
+                              </ion-col>
+                              <ion-col class="derecha" col-5>
+                                  <span>{{ultimoVto | date :  "dd/MM/y"}}</span>
+                              </ion-col>
+                          </ion-row>
+                        </ion-item>
+                  </ion-list>
+                  <ion-list *ngFor="let saldo of saldos">
+                        <ion-item>
+                            <ion-row>
+                                <ion-col col-7>
+                                    <p>Saldo Cuota {{saldo.Numero}} de {{totalCuotas}}:</p>
+                                </ion-col>
+                                <ion-col class="derecha" col-5>
+                                    <span>{{saldo.Saldo | currency:'$':true:"1.2" }}</span>
+                                </ion-col>
+                            </ion-row>
+                          </ion-item>
+                    </ion-list>
+                    <p text-center><br>(Los intereses punitorios pueden variar. Corrobore al momento de abonar)</p>
+                </ion-card-content>
+            </ion-card>
+            <div padding>
+                <button class="pagar" ion-button block (click)="goToPagos()">Como pagar</button>
+              </div>
+
+    </ion-col>
+  </ion-row>
+ 
+</ion-content>

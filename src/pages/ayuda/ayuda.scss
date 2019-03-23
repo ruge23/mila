@@ -1,0 +1,29 @@
+page-ayuda {
+    .faqs-header{
+        background-image: url(../../assets/imgs/telefonos/mila-header.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+    *{
+        border-bottom: none!important;
+    }
+    ion-card.item{
+        margin-bottom: 20px!important;
+        border-radius: 10px;
+    }
+    ion-card h2{
+        font-weight: 700;
+    }
+    ion-card-content{
+        padding: 0!important;
+    }
+    ion-label{
+        margin: 0!important;
+    }
+    
+}

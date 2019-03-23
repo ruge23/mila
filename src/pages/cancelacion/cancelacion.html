@@ -1,0 +1,65 @@
+<ion-header no-shadow no-border>
+  <ion-navbar transparent>
+    <ion-row class="row-nav">
+      <ion-title style="text-align: center;"><ion-icon style="margin-right:0px !important;color: white !important;" name="mila-logo"></ion-icon></ion-title>
+      <ion-buttons *ngIf="!fbid" float-right end (click)="presentPopover($event)">
+        <button ion-button icon-only>
+          <ion-icon style="margin-right:0px !important;font-size: 1.2em !important; color: white !important;" name="mila-avatar"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="fbid" float-right end (click)="presentPopover($event)">
+        <ion-avatar item-start>
+          <img [src]="imgSrc">
+        </ion-avatar>
+      </ion-buttons>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row padding>
+    <ion-col>
+      <p text-center no-margin style="color: #fff; font-size: 0.8em;"><strong>Estimado (a):</strong></p><br>
+      <h2 text-center no-margin style="color: #fff; font-size: 1em;"><strong>{{nameUser}}</strong></h2><br>
+      <p text-wrap text-center no-margin style="color: #fff; font-size: 0.8em;">El siguiente saldo informado es para la pre cancelación del prestamo N°{{numPrestamo}}</p>
+    </ion-col>
+  </ion-row>
+  <div padding>
+    <button [class]="className" ion-button icon-start outline (click)="expandItem()" [disabled]="solicitado">Consultar Precancelación</button>
+  </div>
+  <div *ngIf="expanded">
+    <ion-row style="text-align: center;">
+      <ion-col>
+        <button ion-fab color="dark" style="margin: 0 auto; height: 42px; width: 42px;">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="text-align: center;">
+      <ion-col style="max-width: 40% !important; border-bottom: 5px solid white; margin: 0 auto;">
+        <p style="font-size: 1em; color: white;"><strong>Monto a pagar:</strong></p>
+        <p style="font-size: 1.2em; color: white;"><strong>{{importeCancelacion | currency:'$':true}}</strong></p>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center>
+      <p text-center style="font-size: 1em; color: white;"><strong>Monto válido</strong></p>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p style="font-size: 1em; color: white;"><strong>Desde el {{vigenciaDesde | date: 'dd-MM-yyyy'}}</strong></p>      
+      </ion-col>
+      <ion-col>
+        <p style="font-size: 1em; color: white;"><strong>Hasta el {{vigenciaHasta | date: 'dd-MM-yyyy'}}</strong></p>      
+      </ion-col>
+    </ion-row>
+    <div padding>
+      <button class="pagar" ion-button block (click)="goToPago()">Como pagar</button>
+    </div> 
+  </div>
+</ion-content>
+
+
+
+<!-- <ion-content padding>
+El saldo es {{saldo}} y la vigencia es {{vigencia}}
+</ion-content> -->

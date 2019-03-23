@@ -1,0 +1,28 @@
+page-prenda {
+  ion-content{
+    background-image: linear-gradient(to bottom, #632a88, #912ad3);
+  }
+  ion-navbar .toolbar-background {
+    background: #632a88 !important;
+  }
+  div.toolbar-title{
+    padding: 0 24px 0 0 !important;
+  }
+  ion-row.row-nav{
+    height: 40px !important;
+    ion-col.col-nav{
+      padding: 0px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+  button.descargar{
+    margin: 0 auto;
+    color: white;
+    width: 100%;
+    border-color: white;
+    border-radius: 15px;
+    border-width: 2px;
+    font-size: 1em;
+    height: 40px;
+  }
+}

@@ -1,0 +1,27 @@
+<ion-header no-shadow no-border>
+    <ion-navbar color="menu">
+        <button ion-button menuToggle>
+            <ion-icon style="color: white;" name="menu"></ion-icon>
+          </button>
+      <ion-title>Teléfonos Útiles</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-row>
+    <ion-col text-center class="telefonos-header"></ion-col>
+  </ion-row>
+    <ion-list style="margin-top: 16px !important;" inset *ngFor="let tel of telefonos">
+      <ion-item (click)="callNumber(tel.numero)">
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/telefonos.svg">
+        </ion-avatar>
+        <p text-wrap>{{tel.Nombre}}</p>
+        <p text-wrap>{{tel.Telefono}}</p>
+        <button ion-button clear icon-only item-end>
+          <ion-icon color="badge" name="arrow-dropright"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+</ion-content>
+

@@ -1,0 +1,86 @@
+page-seguros {
+    ion-content{
+        background-image: linear-gradient(to bottom, #632a88, #912ad3);
+    }
+    ion-navbar .toolbar-background {
+        background: #632a88 !important;
+    }
+    div.toolbar-title{
+        padding: 0 24px 0 0 !important;
+    }
+    ion-row.row-nav{
+        height: 40px !important;
+        ion-col.col-nav{
+            padding: 0px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+    .ngx-datatable.datatable-body.datatable-scroll{
+        width: 100% !important;
+    }
+    ngx-datatable.ngx-datatable.fixed-header.fixed-row.virtualized{
+        width: 100% !important;        
+    }
+    .visible{
+        width: 100% !important;
+    }
+    datatable-body.datatable-body{
+        width: 100% !important;
+    }
+    datatable-scroller.datatable-scroll{
+        width: 100% !important;
+    }
+    .datatable-header {
+        display: none !important;
+        background: #777;
+        color: #777;
+        //background-image: url('../../assets/imgs/')
+        padding: 0.5em 0 0 0.5em;
+     }
+  
+     .datatable-header-cell {
+        width: 100% !important;
+        font-size: 1em;
+        font-weight: bold;
+     }
+  
+     .datatable-body-row {
+        padding: 0;
+     }
+
+     .datatable-body{
+         width: 100% !important;
+     }
+  
+     .datatable-row-even {
+        background: rgba(240, 240, 240, 1);
+     }
+
+     .datatable-scroller.datatable-scroller{
+         width: 100% !important;
+     }
+
+     .datatable-row-wrapper{
+         width: 100% !important;
+         text-align: center;
+     }
+  
+     .datatable-row-odd {
+        background: rgba(255, 255, 255,1);
+     }
+  
+     .datatable-body-cell {
+        width: 140px !important;
+        font-size: 0.8em;
+        padding: 0.5em;
+     }
+     a.descargar{
+        margin: 0 auto !important;
+        color: white !important;
+        width: 100% !important;
+        border-color: white !important;
+        border-radius: 15px !important;
+        border-width: 2px !important;
+        font-size: 1em !important;
+      }
+}

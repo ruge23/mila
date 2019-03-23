@@ -1,0 +1,40 @@
+page-pagos {
+    ion-content{
+        background-image: linear-gradient(to bottom, #632a88, #912ad3);
+    }
+    ion-navbar .toolbar-background {
+        background: #632a88 !important;
+    }
+    ion-row.row-nav{
+        height: 40px !important;
+        ion-col.col-nav{
+            padding: 0px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+    ion-card.redbrd p{
+        font-size: 0.8em;
+        color: #7b4873;
+        font-weight: 700;
+    }
+    ion-card.redbrd{
+        margin-top: 20px;
+        border: 2px solid #c60506;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-radius: 15px;
+    }
+    ion-card.redbg p{
+        color: #fff;
+    }
+    img.pago{
+        width: 25%;
+        height: 25%;
+        margin: 0 auto;
+    }
+    img.pago2{
+        width: 40%;
+        height: 40%;
+        margin: 0 auto;
+    }
+}

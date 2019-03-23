@@ -1,0 +1,19 @@
+<ion-header no-shadow no-border>
+  <ion-navbar no-border hideBackButton transparent>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="actualizarPerfil()">
+        <ion-icon style="font-size: 1em !important; color: white !important;" name="mila-lapiz"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="inicio">
+    <img [src]="imgSrc">
+    <h2>Bienvenido</h2>
+    <h5>{{nameUser}}</h5>
+    <p>Ahora podes consultar todos los saldos de tu cuenta desde esta nueva plataforma</p>
+  </div>
+  <button class="comenzar" ion-button block color="comenzar" (click)="goToMenu()">Comenzar</button>
+</ion-content>
